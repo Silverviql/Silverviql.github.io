@@ -44,7 +44,15 @@ function drawArcA(){
     var startA = 45;
 
     var yAxis = 160;
-    var yOffset = 100;
+    var yOffset = null;
+    if (a>b){
+        yOffset = 100;
+    }else if(a == b) {
+        yOffset = 100;
+    }else {
+        yOffset = 50;
+    }
+
 
     context.moveTo(startA, yAxis);
     context.bezierCurveTo(startA, yAxis - yOffset, finishA, yAxis - yOffset, finishA, yAxis);
@@ -67,7 +75,14 @@ function drawArcB(){
     var startB = finishA;
 
     var yAxis = 160;
-    var yOffset = 50;
+    var yOffset = null;
+    if (a<b){
+        yOffset = 100;
+    }else if(a == b) {
+        yOffset = 100;
+    }else {
+        yOffset = 50;
+    }
 
     context.moveTo(startB, yAxis);
     context.bezierCurveTo(startB, yAxis - yOffset, finishB, yAxis - yOffset, finishB, yAxis);

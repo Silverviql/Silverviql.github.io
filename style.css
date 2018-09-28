@@ -1,6 +1,6 @@
 #parent {
-    width: 100px;
-    height: 95px;
+    width: 10%;
+    height: 99px;
     margin: auto;
 }
 
@@ -14,34 +14,39 @@
     height:20px;
 }
 .inputC {
-    width:30px;
-    height:20px;
+    width: 56px;
+    height: 30px;
 }
 
 .divA{
-    padding-left: 154px;
-    float: left;
+
 }
 .divB{
-    padding-left: 405px;
+
 }
 .canvas{
     clear: left;
+    margin: -219px 0 0 219px;
 }
 
 .numberA{
     float: left;
+    font-size: 200%;
 }
 .numberB{
     float: left;
+    font-size: 200%;
 }
 .numberC{
     float: left;
+    font-size: 200%;
 }
 
 .plus {
     float: left;
+    font-size: 200%;
 }
 .sum {
     float: left;
+    font-size: 200%;
 }
