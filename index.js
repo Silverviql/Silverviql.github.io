@@ -29,9 +29,11 @@ console.log(a,'--',b,'--',c);
 
 const parent = document.querySelector('#parent');
 
-parent.innerHTML = '<div class="numberA">' + a +  '+' + '</div>' +
-             '<div class="numberB">' + b + '=' + '</div>' +
-              '<div class="numberC">' + '?' + '</div>';
+parent.innerHTML = '<div class="numberA">' + a + '</div>' +
+    '<div  class="plus">' + '+' + '</div>' +
+    '<div class="numberB">' + b + '</div>' +
+    '<div class="sum">' + '=' + '</div>' +
+    '<div class="numberC">' + '?' + '</div>';
 
 var finishA = 45+a*39;
 // Рисование первой стрелки
@@ -121,10 +123,7 @@ $(".inputA").change(function() {
         $(this).css("color", "red");
         $(".numberA").css("background", "yellow");
     }
-        //Если иначе то инпут с черныйми полями
-    else {
-            $(this).css("border", "2px solid black");
-        }
+
 
 });
 // проверка инпута B
@@ -151,9 +150,7 @@ $(".inputB").change(function() {
         $(".numberB").css("background", "yellow");
     }
 
-    else {
-        $(this).css("border", "2px solid black");
-    }
+
 
 });
 
@@ -178,9 +175,7 @@ function inputC() {
             $(this).css("color", "red");
         }
 
-        else {
-            $(this).css("border", "2px solid black");
-        }
+
 
     });
 }
