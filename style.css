@@ -1,0 +1,40 @@
+#parent {
+    width: 100px;
+    height: 95px;
+    margin: auto;
+}
+
+.inputA {
+    width:30px;
+    height:20px;
+}
+.inputB {
+    display: none;
+    width:30px;
+    height:20px;
+}
+.inputC {
+    width:30px;
+    height:20px;
+}
+
+.divA{
+    padding-left: 154px;
+    float: left;
+}
+.divB{
+    padding-left: 405px;
+}
+.canvas{
+    clear: left;
+}
+
+.numberA{
+    float: left;
+}
+.numberB{
+    float: left;
+}
+.numberC{
+    float: left;
+}
