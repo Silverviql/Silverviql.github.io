@@ -1,4 +1,4 @@
-var start_a = 6;
+var start_a = 6; //Промежутки числе для задачи
 var start_c = 11;
 var start_d = 9;
 var start_y = 14;
@@ -23,7 +23,6 @@ var a = arrA[randA];
 var c = arrC[randC];
 
 var b = c - a;
-
 
 console.log(a,'--',b,'--',c);
 
@@ -55,7 +54,6 @@ function drawArcA(){
     context.strokeStyle = "#c15b8a";
     context.stroke();
 };
-
 
 
 // Рисование второй стрелки
@@ -92,46 +90,22 @@ function drawImg() {
         context.drawImage(img, 10, 150);
     };
 
-   /* img.src = "https://i.stack.imgur.com/CLGdl.png";*/
     img.src = "sprite.png";
 }
-/*// проверка инпута A
-var inputA =  document.querySelector('.inputA');
-inputA.oninput = function() {
-    if(Number(inputA.value) != a) {
-        alert('неправильно')
-    }
-    else{
-        alert(inputA.value)
-    }
-
-}
-
-// проверка инпута B
-var inputB =  document.querySelector('.inputB');
-inputB.oninput = function() {
-    if(Number(inputB.value) != b) {
-        alert('неправильно')
-    }
-    else{
-        alert(inputB.value)
-    }
-}*/
 
 // проверка инпута A
 $(".inputA").change(function() {
 
-// If the value is less than 7, add a red border
+// Если значение меньше то число в input красное, и в формуле число с желтым фоном.
     if ($(this).val() < a) {
-     /*   $(this).css("border", "2px solid red");*/
         $(this).css("color", "red");
         $(".numberA").css("background", "yellow");
 
     }
 
-// Else if the value is equal to 7, add a green border
+// Если значение введено верно , то число в инпуте если было красным становится черным
+// и отображается 2 стрелка и инпут ввода 2 числа
     else if ($(this).val() == a) {
-        $(this).css("border", "2px solid green");
         $(this).css("color", "black");
         drawArcB();
         $(".inputB").css("display", "block");
@@ -142,29 +116,26 @@ $(".inputA").change(function() {
         $(".numberA").css("background", "white");
     }
 
-// Else if the value is greater than 7, add an orange border
+// Если значение меньше то число в input красное, и в формуле число с желтым фоном.
     else if ($(this).val() > a) {
-        $(this).css("border", "2px solid orange");
+        $(this).css("color", "red");
+        $(".numberA").css("background", "yellow");
     }
-
-// Else if the value is anything else, add a black border
+        //Если иначе то инпут с черныйми полями
     else {
-        $(this).css("border", "2px solid black");
-    }
+            $(this).css("border", "2px solid black");
+        }
 
 });
 // проверка инпута B
 $(".inputB").change(function() {
 
-// If the value is less than 7, add a red border
     if ($(this).val() < b) {
         $(this).css("color", "red");
         $(".numberB").css("background", "yellow");
     }
 
-// Else if the value is equal to 7, add a green border
     else if ($(this).val() == b) {
-        $(this).css("border", "2px solid green");
         $(this).css("color", "black");
         setTimeout(function () {
             $('.divB').text($(".inputB").val()); // Если использовать $(this).val() значение теряется.
@@ -174,12 +145,12 @@ $(".inputB").change(function() {
             inputC();
         }, 2000);
     }
-// Else if the value is greater than 7, add an orange border
+
     else if ($(this).val() > b) {
-        $(this).css("border", "2px solid orange");
+        $(this).css("color", "red");
+        $(".numberB").css("background", "yellow");
     }
 
-// Else if the value is anything else, add a black border
     else {
         $(this).css("border", "2px solid black");
     }
@@ -192,26 +163,21 @@ function inputC() {
 
     $(".inputC").blur(function() {
 
-// If the value is less than 7, add a red border
         if ($(this).val() < c) {
             $(this).css("color", "red");
         }
 
-// Else if the value is equal to 7, add a green border
         else if ($(this).val() == c) {
-            $(this).css("border", "2px solid green");
             $(this).css("color", "black");
             setTimeout(function () {
-                $('.numberC').text($(".inputC").val()); // Если использовать $(this).val() значение теряется.
+                $('.numberC').text($(".inputC").val());
             }, 1000)
         }
 
-// Else if the value is greater than 7, add an orange border
         else if ($(this).val() > c) {
-            $(this).css("border", "2px solid orange");
+            $(this).css("color", "red");
         }
 
-// Else if the value is anything else, add a black border
         else {
             $(this).css("border", "2px solid black");
         }
