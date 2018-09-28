@@ -47,7 +47,9 @@ function drawArcA(){
 
     context.moveTo(startA, yAxis);
     context.bezierCurveTo(startA, yAxis - yOffset, finishA, yAxis - yOffset, finishA, yAxis);
-
+    context.lineTo(finishA-10,150);
+    context.lineTo(finishA+10,150);
+    context.lineTo(finishA,160);
 
     context.lineWidth = 2;
     context.strokeStyle = "#c15b8a";
@@ -69,6 +71,9 @@ function drawArcB(){
 
     context.moveTo(startB, yAxis);
     context.bezierCurveTo(startB, yAxis - yOffset, finishB, yAxis - yOffset, finishB, yAxis);
+    context.lineTo(finishB-10,150);
+    context.lineTo(finishB+10,150);
+    context.lineTo(finishB,160);
 
     context.lineWidth = 2;
     context.strokeStyle = "#c15b8a";
