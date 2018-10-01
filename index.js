@@ -45,20 +45,24 @@ function drawArcA(){
 
     var yAxis = 160;
     var yOffset = null;
-    if (a>b){
-        yOffset = 100;
-    }else if(a == b) {
+    if (a >= b){
         yOffset = 100;
     }else {
-        yOffset = 50;
+        yOffset = 60;
     }
 
-
     context.moveTo(startA, yAxis);
-    context.bezierCurveTo(startA, yAxis - yOffset, finishA, yAxis - yOffset, finishA, yAxis);
-    context.lineTo(finishA-10,150);
-    context.lineTo(finishA,150);
-    context.lineTo(finishA,160);
+    context.bezierCurveTo(80, yAxis - yOffset, finishA-25, yAxis - yOffset, finishA, yAxis);
+    if (a >= b){
+        context.lineTo(finishA-10,150);
+        context.moveTo(finishA,160);
+        context.lineTo(finishA,145);
+    }else {
+        context.lineTo(finishA-7,155);
+        context.moveTo(finishA,160);
+        context.lineTo(finishA,150);
+    }
+
 
     context.lineWidth = 2;
     context.strokeStyle = "#c15b8a";
@@ -76,19 +80,24 @@ function drawArcB(){
 
     var yAxis = 160;
     var yOffset = null;
-    if (a<b){
-        yOffset = 100;
-    }else if(a == b) {
+    if (a <= b){
         yOffset = 100;
     }else {
-        yOffset = 50;
+        yOffset = 60;
     }
 
     context.moveTo(startB, yAxis);
-    context.bezierCurveTo(startB, yAxis - yOffset, finishB, yAxis - yOffset, finishB, yAxis);
-    context.lineTo(finishA-10,150);
-    context.lineTo(finishA,150);
-    context.lineTo(finishA,160);
+    context.bezierCurveTo(startB+44, yAxis - yOffset, finishB-25, yAxis - yOffset, finishB, yAxis);
+    if (a<=b){
+        context.lineTo(finishB-10,150);
+        context.moveTo(finishB,160);
+        context.lineTo(finishB,145);
+    }else {
+        context.lineTo(finishB-7,155);
+        context.moveTo(finishB,160);
+        context.lineTo(finishB,150);
+    }
+
 
     context.lineWidth = 2;
     context.strokeStyle = "#c15b8a";
@@ -148,9 +157,9 @@ $(".inputB").change(function() {
 
     else if ($(this).val() == b) {
         $(this).css("color", "black");
-            $('.divB').text($(".inputB").val()); // Если использовать $(this).val() значение теряется.
+        $('.divB').text($(".inputB").val()); // Если использовать $(this).val() значение теряется.
         $(".numberB").css("background", "white");
-            inputC();
+        inputC();
     }
 
     else if ($(this).val() > b) {
@@ -175,13 +184,11 @@ function inputC() {
         else if ($(this).val() == c) {
             $(this).css("color", "black");
             $('.numberC').text($(".inputC").val());
+
         }
 
         else if ($(this).val() > c) {
             $(this).css("color", "red");
         }
-
-
-
     });
 }
