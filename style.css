@@ -1,16 +1,16 @@
 #parent {
-    width: 10%;
+    width: 14%;
     height: 99px;
     margin: auto;
 }
 
 .inputA {
-    width:30px;
+    width:18%;
     height:20px;
 }
 .inputB {
     display: none;
-    width:30px;
+    width:25%;
     height:20px;
 }
 .inputC {
@@ -44,9 +44,11 @@
 
 .plus {
     float: left;
-    font-size: 200%;
+    font-size: 155%;
+    margin: 5px;
 }
 .sum {
     float: left;
-    font-size: 200%;
+    font-size: 155%;
+    margin: 4px;
 }

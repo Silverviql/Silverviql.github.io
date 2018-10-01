@@ -35,13 +35,13 @@ parent.innerHTML = '<div class="numberA">' + a + '</div>' +
     '<div class="sum">' + '=' + '</div>' +
     '<div class="numberC">' + '?' + '</div>';
 
-var finishA = 45+a*39;
+var finishA = 36+a*39;
 // Рисование первой стрелки
 function drawArcA(){
     var canvas = document.getElementById("myCanvas");
     var context = canvas.getContext("2d");
 
-    var startA = 45;
+    var startA = 36;
 
     var yAxis = 160;
     var yOffset = null;
@@ -57,7 +57,7 @@ function drawArcA(){
     context.moveTo(startA, yAxis);
     context.bezierCurveTo(startA, yAxis - yOffset, finishA, yAxis - yOffset, finishA, yAxis);
     context.lineTo(finishA-10,150);
-    context.lineTo(finishA+10,150);
+    context.lineTo(finishA,150);
     context.lineTo(finishA,160);
 
     context.lineWidth = 2;
@@ -86,9 +86,9 @@ function drawArcB(){
 
     context.moveTo(startB, yAxis);
     context.bezierCurveTo(startB, yAxis - yOffset, finishB, yAxis - yOffset, finishB, yAxis);
-    context.lineTo(finishB-10,150);
-    context.lineTo(finishB+10,150);
-    context.lineTo(finishB,160);
+    context.lineTo(finishA-10,150);
+    context.lineTo(finishA,150);
+    context.lineTo(finishA,160);
 
     context.lineWidth = 2;
     context.strokeStyle = "#c15b8a";
@@ -104,7 +104,7 @@ function drawImg() {
     context.moveTo(200, 150);
 
     img.onload = function() {
-        context.drawImage(img, 10, 150);
+        context.drawImage(img, 0, 141);
     };
 
     img.src = "sprite.png";
@@ -126,10 +126,7 @@ $(".inputA").change(function() {
         $(this).css("color", "black");
         drawArcB();
         $(".inputB").css("display", "block");
-        setTimeout(function () {
-            $('.divA').text($(".inputA").val())
-            }, 2000
-        );
+        $('.divA').text($(".inputA").val());
         $(".numberA").css("background", "white");
     }
 
@@ -151,13 +148,9 @@ $(".inputB").change(function() {
 
     else if ($(this).val() == b) {
         $(this).css("color", "black");
-        setTimeout(function () {
             $('.divB').text($(".inputB").val()); // Если использовать $(this).val() значение теряется.
-        }, 1000)
         $(".numberB").css("background", "white");
-        setTimeout(function () {
             inputC();
-        }, 2000);
     }
 
     else if ($(this).val() > b) {
@@ -181,9 +174,7 @@ function inputC() {
 
         else if ($(this).val() == c) {
             $(this).css("color", "black");
-            setTimeout(function () {
-                $('.numberC').text($(".inputC").val());
-            }, 1000)
+            $('.numberC').text($(".inputC").val());
         }
 
         else if ($(this).val() > c) {
